@@ -1,24 +1,22 @@
+# Problem Statement:  Write an eBPF code to allow traffic only at a specific TCP port (default 4040) for a given process name (for e.g, "myprocess"). All the traffic to all other ports for only that process should be dropped.
+
+
 ## 1. First compile drop_tcp_pack_of_proc.c file
 ```
     clang -O2 -target bpf -c drop_tcp_pack_of_proc.c -o drop_tcp_pack_of_proc.o
 ```
 
-## 2. Create a C group
-```
-    sudo mkdir -p /sys/fs/cgroup/myprocess
-```
-
-## 3. Start our dummy process (myprocess)
+## 2. Start our dummy process (myprocess)
 ```
     ./myProcess/myprocess
 ```
 
-## 4. Run go program
+## 3. Run go program
 ```
     sudo go run main.go myprocess 4040
 ```
 
-## 5. Start two listeners at port 4040 and 8080 in sperate terminals
+## 4. Start two listeners at port 4040 and 8080 in sperate terminals
 ```
     # Allowed port
     nc -l -k 4040   # messages from myprocess pass
