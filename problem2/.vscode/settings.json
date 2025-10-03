@@ -1,0 +1,10 @@
+{
+    "files.associations": {
+        "tcp.h": "c",
+        "bpf_helpers.h": "c",
+        "if_ether.h": "c",
+        "in.h": "c",
+        "pkt_cls.h": "c",
+        "sched.h": "c"
+    }
+}
