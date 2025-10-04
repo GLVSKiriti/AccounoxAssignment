@@ -11,9 +11,10 @@ clang -O2 -target bpf -c drop_tcp_pack_of_proc.c -o drop_tcp_pack_of_proc.o
 ./myProcess/myprocess
 ```
 
-## 3. Run go program
+## 3. Now Build the binary and run the binary
 ```
-sudo go run main.go myprocess 4040
+go build -o prob2 ./main.go
+sudo ./prob2 myprocess 4040
 ```
 
 ## 4. Start two listeners at port 4040 and 8080 in sperate terminals
