@@ -26,7 +26,7 @@ Now veth0 is inside ns1 namespace and veth1 on host
 ## 3. Now Build the binary and run the binary
 ```
 go build -o prob1 ./main.go
-sudo ./prob1 veth0 4040
+sudo ./prob1 veth1 4040
 ```
 which can now drop all tcp packets at port 4040 through veth1 interface
 
